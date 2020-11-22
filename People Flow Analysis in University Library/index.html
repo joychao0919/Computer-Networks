@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>旺宏館自動門開關次數統計分析</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">NTHU</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - 首頁 -->
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>首頁</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Nav Item - 統計資料 -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>統計資料</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="charts.html">Hour</a>
+            <a class="collapse-item" href="cards.html">Week</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Nav Item - 館藏查詢 -->
+      <li class="nav-item">
+        <a class="nav-link" href="buttons.html">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>館藏查詢</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Nav Item - 館藏查詢 -->
+      <li class="nav-item">
+        <a class="nav-link" href="tables.html">
+          <i class="fas fa-user-circle"></i>
+          <span>小組分工</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+
+          </ul>
+        </nav>
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!--
+          <div class="row">
+
+            <div class="col-xl-3 col-md-3 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Last Hour</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="usetimes"></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar-week fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+        -->
+          
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-6 mb-4">
+
+              <!-- Approach -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">LoRaWAN  X  旺宏館</h6>
+                </div>
+                <div class="card-body">
+                  <p class="mb-0">您是否有過以下的經驗——想要去圖書館好好的讀書，但是館內過多的讀者卻又讓您覺得喘不過氣呢？</p>
+                  <p class="mb-0">或是到了圖書館繞了一圈後卻發現都沒有位子，白跑一趟了？</p>
+                  <p class="mb-0">在我們的網站，您可以獲得即時的旺宏館人流資訊，</p>
+                  <p class="mb-0">輕鬆避開那些尖峰時段，從此跟壅擠的圖書館道別！</p>
+                </div>
+              </div>
+
+              <!-- Project Card Example -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">目前人流量</h6>
+                </div>
+                <div class="card-body">
+                  <h4 class="small font-weight-bold">Current People <span class="float-right" id="percentage"></span></h4>
+                  <div class="progress mb-4">
+                    <div id="progressbar" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+
+              
+
+              <!-- Approach -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">最新資訊</h6>
+                </div>
+                <div class="card-body">
+                  <p class="mb-0">總圖4F、5F置物櫃於2020年1月9日(四)進行置物櫃更新工程，</p>
+                  <p class="mb-0">施工期間會發出噪音，影響閱覽品質之處，敬請見諒。</p>
+                </div>
+              </div>
+
+              <!-- Color System -->
+              <div class="row">
+
+                <div class="col-lg-6 mb-4">
+                  <div class="card bg-info text-white shadow">
+                    <div class="card-body">
+                      更新時間
+                      <div class="text-white-50 small" id="timenow"></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            
+          </div>
+
+          
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2019</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <script type="text/javascript" src="data.js"></script>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/JavaScript">
+	var AccessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjEwZTU1NWNmNjJhZTg3ZGNmNWM5NDI5YmRmMGYxMTYwNWJjNDlmZWRjOWJhZTE0MjA4ZGMwODAxMTBkYTYyMjg4NzgwMmU5ZTg1YTVlOTc2In0.eyJhdWQiOiIyIiwianRpIjoiMTBlNTU1Y2Y2MmFlODdkY2Y1Yzk0MjliZGYwZjExNjA1YmM0OWZlZGM5YmFlMTQyMDhkYzA4MDExMGRhNjIyODg3ODAyZTllODVhNWU5NzYiLCJpYXQiOjE1NzY0OTk5MzAsIm5iZiI6MTU3NjQ5OTkzMCwiZXhwIjoxNjA4MTIyMzMwLCJzdWIiOiIyNDQiLCJzY29wZXMiOltdfQ.yQ96yWS7OrZbJv3ktOizTCGg7T5SQMbmlH0JS3hA4-eSHzhIP7Db6ouuA5aE9AM0Ool6_XZRPcxohq_4ctSCS1h0_3Qa_lnlO3Pin9Dw9M4BRckGaeKTCR7UNO2SOZJI2epJt4H0Yz23G23lUi9np88U48VfDH_OhDR5zAkf1S6EjNN8qczKFb2txcKmM-qaRpdSE9CTr0Y0KzdGtOG7rmliIjGcHkamGTcE3Sr_U6POoJKmmzf9EyAbKajwyrjdyK0KM-hrl9Pm_wSMcuKqFco0ZyhGnwHmW80K3AScnKIapED_b9PLgy0pAf1RkxotdvLeZOEPdxAp3qhDuMFfxgzb0rErNPoW28nirTqUvnpVviw-nx45zOph5r82GacjZiLuT0IxxUzFfFRhULxkXkZAv24LKh0zt1eVOUMKuyWm2EJGqP3PD-knKe9IdyllMMh3X5_5_s5V9orDXY6I4nUNGgTabAr59XyKbfJiXiE8ZuRS9zizcflEU5haX2oDXjL-KhRGDul6QIJuR36BMserrznlgDqEblyFP-vq62LlPUFbYEq6WtFeWDddeF6NHfVfe9aAZTu_BUVPdnnTwS-RDGGm1AlUvRH_HEKes48CyD7s3ij-hGm7c4Z7GXjvAKF-I20RJUHb218YXAbQ0FBeQqZTx-89d3eULAQPiKs";
+	$(document).ready(function() {
+	    var macaddr = "?macaddr=" + "aa91cee3"; 
+             var today = new Date();
+            var date2 = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(); 
+            var time2 = today.getHours()+ ":" + today.getMinutes() + ":" + today.getSeconds();
+            today.setMinutes(today.getMinutes()-60) ;
+            var date1 = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(); 
+            var time1 = today.getHours()+ ":" + today.getMinutes()+ ":" + today.getSeconds();
+            var dateTime1 = date1+' '+time1;
+            var dateTime2 = date2+' '+time2;//dateTime2是網頁更新時間
+            document.getElementById("timenow").innerHTML = dateTime2;
+			var date_filterpast = "&date_filter=" + dateTime1 +"+-+"+dateTime2;
+
+            $.ajax({
+				type: "POST",
+				url: "https://campus.kits.tw/ICN_API" + macaddr + date_filterpast,
+				dataType: "json",
+				async: false,
+				success: function(response) {
+					console.log(response);
+					var num=0;//num是計算過去一小時的開關次數
+                    for(var i in response)
+                    {
+                    if(response[i]["acc_x"]!=null)
+                    {
+                        num++;
+                    }
+                    }
+                    x=Math.round(num*100/200);
+                    //x是用過去次數換算成人潮百分比的值(公式=過去一個小時次數/200)
+                    //document.getElementById("usetimes").innerHTML = num+"次";
+                    document.getElementById("percentage").innerHTML = x+"%";
+                    $('#progressbar').attr('aria-valuenow', x+'%').css('width', x+'%');
+                
+				},
+				headers: {
+					'Accept': 'application/json',
+					'Authorization': 'Bearer ' + AccessToken
+				},
+				error: function(jqXHR) {
+					//alert("Return status: " + jqXHR.status);
+					if(jqXHR.status == '200')
+						alert("API calling error: macaddr or url format error!");
+					else
+						alert("API is sleeping !");
+				}
+			})
+	});
+</script>
+</body>
+
+</html>
